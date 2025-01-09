@@ -36,3 +36,29 @@ async function fetchMeals(query) {
         console.error('Error fetching meals:', error);
     }
 }
+
+
+function displayMeals(meals) {
+    allMeals = meals;
+    mealsContainer.innerHTML = '';
+    showAllButton.classList.add('d-none');
+
+
+    if (meals.length === 0) {
+        mealsContainer.innerHTML = '<p class="text-center">No meals found. Try a different search!</p>';
+        return;
+    }
+
+    var mealsToShow = meals.slice(0, 5);
+    mealsToShow.forEach(meal => createMealCard(meal));
+
+    if (meals.length > 5) {
+        showAllButton.classList.remove('d-none');
+        showAllButton.onclick = () => {
+            meals.slice(5).forEach(meal => createMealCard(meal));
+            showAllButton.classList.add('d-none');
+        };
+    }
+
+
+}

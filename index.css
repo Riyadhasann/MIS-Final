@@ -66,6 +66,33 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.card-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.show-all-btn {
+    margin-top: 20px;
+    background-color: rgb(0, 123, 255);
+    border: none;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.show-all-btn:hover {
+    background-color: rgb(3, 101, 205); 
+    cursor: pointer;
+}
+
+
+
 .modal-content {
     border-radius: 10px;
     padding: 20px;
@@ -74,15 +101,20 @@ main {
 .modal-header {
     background-color: rgb(29, 126, 223);
     color: white;
-    border-bottom: 2px
+    border-bottom: 2px solid rgb(0, 123, 255)
 }
 
 .modal-footer {
-    border-top: 2px
+    border-top: 2px solid rgb(0, 123, 255);
+}
+.modal-body {
+    font-size: 16px;
+    color: rgb(33, 37, 41);
 }
 
+
 footer {
-    background-color: blue;
+    background-color: rgb(78, 166, 254);
     color: white;
     text-align: center;
     padding: 15px 0;

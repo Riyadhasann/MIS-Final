@@ -24,3 +24,39 @@ main {
     flex: 1;
     padding: 20px;
 }
+
+
+.meal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+}
+
+.meal-image:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.meal-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.meal-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: rgb(29, 126, 223);
+    color: white;
+    border-bottom: 2px
+}

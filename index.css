@@ -60,3 +60,33 @@ main {
     color: white;
     border-bottom: 2px
 }
+
+.modal-footer {
+    border-top: 2px
+}
+
+footer {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .meal-card {
+        margin-bottom: 10px;
+    }
+
+    .navbar a {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .show-all-btn {
+        font-size: 10px;
+        padding: 5px;
+    }
+}

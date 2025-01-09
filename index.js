@@ -79,3 +79,40 @@ function createMealCard(meal) {
    `;
    mealsContainer.appendChild(col);
 }
+
+
+
+async function showMealDetails(mealId) {
+    var apiUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
+    try {
+        var response = await fetch(apiUrl);
+        var data = await response.json();
+        var meal = data.meals[0];
+
+        mealDetailsContent.innerHTML = `
+          <h3>${meal.strMeal}</h3>
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="img-fluid mb-3">
+          <p><strong>Category:</strong> ${meal.strCategory}</p>
+          <p><strong>Area:</strong> ${meal.strArea}</p>
+          <p><strong>Instructions:</strong> ${meal.strInstructions}</p>
+          <h5>Ingredients:</h5>
+          <ul> 
+            ${getIngredientsList(meal)}
+          </ul>       
+        `;
+    }   catch (error) {
+        console.error('Error fetching meal details:', error);
+    }
+}
+
+function getIngredientsList(meal) {
+    let ingredients = '';
+    for (let i = 1; i <= 20; i++) {
+        var ingredient = meal[`strIngredient${i}`];
+        var measure = meal[`strMeasure${i}`];
+        if (ingredient && ingredient.trim() !== '') {
+            ingredients += `<li>${ingredient} - ${measure}</li>`;
+        }
+    }
+    return ingredients;
+}

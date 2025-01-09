@@ -3,19 +3,25 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
-    background: red;
+    background: radial-gradient( circle 369px at -2.9% 12.9%,  rgba(247,234,163,1) 0%, rgba(236,180,238,0.56) 46.4%, rgba(163,203,247,1) 100.7% );
 }
 
 header {
+    background: rgb(33, 27, 126);
+    background: radial-gradient(circle, rgba(33,27,126,1) 0%, rgba(51,44,197,1) 26%, rgba(76,69,220,1) 43%, rgba(137,129,255,1) 68%);
+    color:white;
     text-align: center;
     padding: 20px;
-    border-bottom: 4px
+    border-bottom: 4px solid rgb(0, 123, 255)
+    
 }
 
 
 nav {
+    background-image: radial-gradient( circle 369px at -2.9% 12.9%,  rgba(247,234,163,1) 0%, rgba(236,180,238,0.56) 46.4%, rgba(163,203,247,1) 100.7% );
     padding: 10px 0;
-    border-top: 4px
+    border-top: 4px solid rgb(0, 123, 255)
+    
 
 }
 
@@ -29,7 +35,9 @@ main {
 .meal-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -46,8 +54,16 @@ main {
 }
 
 .meal-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-body {
+    background-color: rgb(255, 255, 255); 
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal-content {

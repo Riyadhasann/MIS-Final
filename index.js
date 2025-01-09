@@ -59,6 +59,23 @@ function displayMeals(meals) {
             showAllButton.classList.add('d-none');
         };
     }
+}
 
+function createMealCard(meal) {
+    var col = document.createElement('div');
+    col.className = 'col-md-4 meal-card';
 
+    col.innerHTML = `
+      <div class="card h-100">
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" class="meal-image">
+        <div class="card-body">
+          <h5 class="card-title">${meal.strMeal}</h5>
+          <p><strong>Meal ID:</strong> ${meal.idMeal}</p>
+          <button class="btn btn-info" onclick="showMealDetails(${meal.idMeal})" data-bs-toggle="modal" data-bs-target="#mealDetailsModal">
+            More Information
+          </button>
+        </div>
+      </div>
+   `;
+   mealsContainer.appendChild(col);
 }
